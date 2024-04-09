@@ -25,7 +25,7 @@ const Globe = () => {
                     </div>
                 </div>
             </div>
-            <div className={`relative z-[2] max-sm:hidden bottom-16 left-20`}>
+            <div className={`relative z-[2] max-sm:hidden bottom-0 left-20`}>
                 <Earth1 />
             </div>
             <img className="absolute bottom-0 left-0 w-full h-full object-cover d-block pointer-events-none" width="801" height="807" loading="lazy" decoding="async" alt="" aria-hidden="true" src="/images/home/globe/footer-galaxy.jpg" />
