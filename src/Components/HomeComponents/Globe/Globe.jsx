@@ -29,7 +29,7 @@ const Globe = () => {
                 <Earth1 />
             </div>
             <img className="absolute bottom-0 left-0 w-full h-full object-cover d-block pointer-events-none" width="801" height="807" loading="lazy" decoding="async" alt="" aria-hidden="true" src="/images/home/globe/footer-galaxy.jpg" />
-            <div className='flex items-center justify-center relative z-[2] mt-[-200px]'>
+            <div className='max-sm:hidden flex items-center justify-center relative z-[2] mt-[-200px]'>
                 <img alt="Mona looking at the galaxy" width="801" height="807" className="pointer-events-none  w-[400px] object-cover h-[403px]" src="/images/home/globe/astrocat.png" />
             </div>
         </div>
