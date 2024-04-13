@@ -47,30 +47,6 @@ export const getUserRepos = (setRepos, userEmail) => {
     })
 }
 
-// export const updateMessage = (id, message) => {
-//     let postToUpdate = doc(dbRef, id);
-
-//     try {
-//         updateDoc(postToUpdate, message).then(() => {
-//             toast.success('Post Updated...')
-//         });
-//     } catch (error) {
-//         toast.error(error.message)
-//     }
-// }
-
-// export const deleteMessage = (id) => {
-//     let postToDelete = doc(dbRef, id);
-
-//     try {
-//         deleteDoc(postToDelete).then(() => {
-//             toast.success('Post Deleted!')
-//         });
-//     } catch (error) {
-//         toast.error(error.message)
-//     }
-// }
-
 export const setUser = async (userData) => {
     const q = query(userRef, where("email", "==", userData?.email));
     const docs = await getDocs(q);
@@ -98,16 +74,6 @@ export const getCurrentUser = (userEmail, setCurentUser) => {
         })[0]);
     });
 }
-
-// export const updateCurrentUser = (id, updatedUser) => {
-//     let updateRef = doc(userRef, id);
-
-//     updateDoc(updateRef, updatedUser).then(() => {
-//         toast.success('Updated Successfully');
-//     }).catch(err => {
-//         toast.error(err.message);
-//     });
-// }
 
 // export const updateCurrentUserPicture = (id, imageURL) => {
 //     let updateRef = doc(userRef, id);
