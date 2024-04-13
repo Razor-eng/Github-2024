@@ -28,7 +28,7 @@ const Trending = () => {
                 </div>
                 <div className="flex items-center mt-3 justify-between">
                     <div className="flex gap-2">
-                        <img src="/public/images/dashboard/home/pku.jpeg" alt="" className="w-5 h-5 rounded-sm" />
+                        <img src="/images/dashboard/home/pku.jpeg" alt="" className="w-5 h-5 rounded-sm" />
                         <h2 className="text-sm font-semibold dark:text-white">PKU-YuanGroup/Open-Sora-Plan</h2>
                     </div>
                     <button className="bg-zinc-300 dark:bg-[#21262D] px-2 rounded-md flex items-center hover:opacity-90">
@@ -56,7 +56,7 @@ const Trending = () => {
             <div className="w-full p-1 sm:p-4 ">
                 <div className="flex items-center mt-3 justify-between">
                     <div className="flex gap-2">
-                        <img src="/public/images/dashboard/home/nashu.jpeg" alt="" className="w-5 h-5 rounded-full" />
+                        <img src="/images/dashboard/home/nashu.jpeg" alt="" className="w-5 h-5 rounded-full" />
                         <h2 className="text-sm font-semibold dark:text-white">nashu/FreeAskInternet</h2>
                     </div>
                     <button className="bg-zinc-300 dark:bg-[#21262D] px-2 rounded-md flex items-center hover:opacity-90">

@@ -24,7 +24,7 @@ const Recommended = () => {
                 </div>
                 <div className="flex items-center mt-3 justify-between">
                     <div className="flex gap-2">
-                        <img src="/public/images/dashboard/home/author.png" alt="" className="w-5 h-5 rounded-full" />
+                        <img src="/images/dashboard/home/author.png" alt="" className="w-5 h-5 rounded-full" />
                         <h2 className="text-sm font-semibold dark:text-white">imbhargav5/rooks</h2>
                     </div>
                     <button className="bg-zinc-300 dark:bg-[#21262D] px-2 rounded-md flex items-center hover:opacity-90">

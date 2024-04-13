@@ -6,9 +6,11 @@ import Repositories from "./ProfileComponents/Repositories";
 import Projects from "./ProfileComponents/Projects";
 import Packages from "./ProfileComponents/Packages";
 import Stars from "./ProfileComponents/Stars";
+import { uploadImage } from "../../Api/ImageUploadApi";
 
 const ProfileMain = ({ currentUser, repos, active }) => {
     const [contribution, setContribution] = useState([]);
+
     const ProfileItems = [
         { element: Overview },
         { element: Repositories },
@@ -16,6 +18,10 @@ const ProfileMain = ({ currentUser, repos, active }) => {
         { element: Packages },
         { element: Stars }
     ]
+
+    const editPhoto = (e) => {
+        uploadImage(e.target.files[0], currentUser?.id);
+    }
 
     useEffect(() => {
         setContribution(repos[0])
@@ -25,9 +31,19 @@ const ProfileMain = ({ currentUser, repos, active }) => {
         <div className="mx-[120px] mt-[8px] px-[32px]">
             <div className="grid grid-cols-4">
                 <div className="col-span-1 mt-10 flex flex-col gap-5">
-                    <img src={currentUser?.photo || '/images/dashboard/navbar/placeholder.png'} alt="" className="w-[296px] h-[296px] rounded-full border border-zinc-300 dark:border-zinc-700 shadow-md" />
+                    <img
+                        src={currentUser?.photo || '/images/dashboard/navbar/placeholder.png'}
+                        alt=""
+                        className="w-[296px] h-[296px] rounded-full border border-zinc-300 dark:border-zinc-700 shadow-md"
+                    />
                     <h2 className="text-xl dark:text-zinc-300 text-zinc-700">{currentUser?.name}</h2>
-                    <button className="dark:bg-[#21262D] bg-zinc-200 hover:opacity-90 dark:text-white flex items-center py-2 justify-center rounded-md">Edit profile</button>
+                    <button className="dark:bg-[#21262D] hover:bg-zinc-300 bg-zinc-200 hover:opacity-90 dark:text-white flex items-center py-2 justify-center rounded-md font-semibold relative">
+                        Edit photo
+                        <input
+                            className="absolute w-full h-full cursor-pointer top-0 left-0 opacity-0" type="file" accept="image/*"
+                            onChange={e => editPhoto(e)}
+                        />
+                    </button>
                 </div>
                 <div className="col-span-3 mt-10 ml-4">
                     {ProfileItems.map((item, id) => id === active && (
@@ -38,7 +54,7 @@ const ProfileMain = ({ currentUser, repos, active }) => {
             <div className="flex items-center w-full justify-center pb-10">
                 <Footer />
             </div>
-        </div>
+        </div >
     )
 }
 

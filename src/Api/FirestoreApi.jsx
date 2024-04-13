@@ -1,4 +1,4 @@
-import { addDoc, collection, getDocs, onSnapshot, query, where } from "firebase/firestore";
+import { addDoc, collection, doc, getDocs, onSnapshot, query, updateDoc, where } from "firebase/firestore";
 import { toast } from 'react-hot-toast'
 import { firestore } from "../firebase";
 
@@ -75,14 +75,14 @@ export const getCurrentUser = (userEmail, setCurentUser) => {
     });
 }
 
-// export const updateCurrentUserPicture = (id, imageURL) => {
-//     let updateRef = doc(userRef, id);
+export const updateCurrentUserPicture = (id, imageURL) => {
+    let updateRef = doc(userRef, id);
 
-//     updateDoc(updateRef, {
-//         photoURL: imageURL
-//     }).then(() => {
-//         toast.success('Image uploaded Successfully');
-//     }).catch(err => {
-//         toast.error(err.message);
-//     });
-// }
+    updateDoc(updateRef, {
+        photo: imageURL
+    }).then(() => {
+        toast.success('Image uploaded Successfully');
+    }).catch(err => {
+        toast.error(err.message);
+    });
+}
